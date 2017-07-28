@@ -37,13 +37,19 @@ public class UpdateAuthorBootstrap {
 		System.out.println();
 
 		for(File file : files) {
-			System.out.println(file.getName() + "...");
+			System.out.print(file.getName() + "...");
 			try {
 				EBooksFile eBooksFile = EBooksFile.open(file);
-				File newFile = eBooksFile.writeMetadatas(metadataMap);
-				file.delete();
-				newFile.renameTo(file);
+				if(eBooksFile.needToWriteMetadatas(metadataMap)) {
+					System.out.println("   [updating]");
+					File newFile = eBooksFile.writeMetadatas(metadataMap);
+					file.delete();
+					newFile.renameTo(file);
+				} else {
+					System.out.println();
+				}
 			} catch(Exception e) {
+				System.out.println();
 				e.printStackTrace();
 			}
 		}

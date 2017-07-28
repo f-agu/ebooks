@@ -12,6 +12,8 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<fmv.version>0.7.7-SNAPSHOT</fmv.version>
 	</properties>
 
 	<build>
@@ -52,9 +54,24 @@
 			<version>3.1</version>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+			<version>1.14</version>
+		</dependency>
+		<dependency>
 			<groupId>commons-net</groupId>
 			<artifactId>commons-net</artifactId>
 			<version>3.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fagu</groupId>
+			<artifactId>fmv-soft-auto</artifactId>
+			<version>${fmv.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fagu</groupId>
+			<artifactId>fmv-utils</artifactId>
+			<version>${fmv.version}</version>
 		</dependency>
     </dependencies>
 </project>
